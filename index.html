@@ -39,12 +39,15 @@
           const heading = document.querySelector(".hero h1");
           const portrait = document.querySelector(".portrait-frame img");
 
-          if (heading) {
+          const headline =
+            'I like the problems that are <span>weird enough to be ambitious.</span>';
+
+          if (heading && heading.innerHTML !== headline) {
             heading.innerHTML =
-              'I like the problems that are <span>weird enough to be ambitious.</span>';
+              headline;
           }
 
-          if (portrait) {
+          if (portrait && portrait.getAttribute("src") !== "/christine-fan-v11.jpg") {
             portrait.src = "/christine-fan-v11.jpg";
           }
         };
