@@ -33,5 +33,27 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (() => {
+        const applyHeroUpdates = () => {
+          const heading = document.querySelector(".hero h1");
+          const portrait = document.querySelector(".portrait-frame img");
+
+          if (heading) {
+            heading.innerHTML =
+              'I like the problems that are <span>weird enough to be ambitious.</span>';
+          }
+
+          if (portrait) {
+            portrait.src = "/christine-fan-v11.jpg";
+          }
+        };
+
+        const root = document.getElementById("root");
+        const observer = new MutationObserver(applyHeroUpdates);
+        observer.observe(root, { childList: true, subtree: true });
+        applyHeroUpdates();
+      })();
+    </script>
   </body>
 </html>
